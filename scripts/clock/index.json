@@ -1,0 +1,1 @@
+{"name": "clock", "type": "py", "ver": "1.0", "note": "整点报时脚本", "author": "测试", "content": "import time\nprint(\"clock script ok\")"}
