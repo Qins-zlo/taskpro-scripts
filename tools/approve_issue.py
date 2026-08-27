@@ -85,9 +85,12 @@ def approve(meta):
                     "commit", "-m", f"approve script: {name} v{meta['ver']} (issue #{meta['issue']})"],
                    check=True)
     subprocess.run(["git", "push", "origin", "main"], check=True)
-    # 在 Issue 上添加 [merged] 标记并关闭
+    # 在 Issue 上追加 [merged] 标记并关闭 (保留原始 body 以便 App 按 UID 识别)
+    cur = gh("GET", f"/issues/{meta['issue']}")
+    orig_body = cur.get("body", "")
+    merged_body = orig_body + "\n\n[merged]\n\n已通过审核并上架。感谢贡献!"
     gh("PATCH", f"/issues/{meta['issue']}",
-       {"state": "closed", "body": "[merged]\n\n已通过审核并上架。感谢贡献!"})
+       {"state": "closed", "body": merged_body})
     print(f"✅ 已通过并上架: {name} v{meta['ver']} (Issue #{meta['issue']})")
 
 def reject(num, reason=""):
