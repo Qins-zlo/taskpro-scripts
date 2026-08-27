@@ -49,9 +49,14 @@ def parse_issue(num):
     ver = field("版本")
     note = field("说明")
     author = field("作者")
-    # 提取代码块 (第一个代码块)
-    m = re.search(r"```\w*\s*\n(.*?)\n```", body, re.DOTALL)
-    content = m.group(1) if m else ""
+    # 提取代码块 (支持动态长度围栏, 如 ``` 或 `````)
+    content = ""
+    fence_m = re.search(r"^(`{3,})\w*\s*\n", body, re.MULTILINE)
+    if fence_m:
+        fence = fence_m.group(1)
+        # 匹配同长度的闭合围栏
+        m = re.search(re.escape(fence) + r"\w*\s*\n(.*?)\n" + re.escape(fence), body, re.DOTALL)
+        if m: content = m.group(1)
     if not name or not content:
         print("解析失败: 缺少名称或代码内容")
         sys.exit(1)
