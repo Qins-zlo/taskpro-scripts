@@ -1,5 +1,1 @@
-{
-  "scripts": [
-    {"name": "hello", "type": "py", "ver": "1.0", "note": "示例脚本: 打印Hello", "author": "Qins-zlo"}
-  ]
-}
+{"scripts": [{"name": "hello", "type": "py", "ver": "1.0", "note": "示例脚本: 打印Hello", "author": "Qins-zlo"}, {"name": "clock", "type": "py", "ver": "1.0", "note": "整点报时脚本", "author": "测试"}]}
