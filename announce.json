@@ -1,1 +1,9 @@
-{  "items": [    {"text": "欢迎使用 TaskPro 定时任务Pro! 新功能: GitHub 脚本市场", "date": "2026-08-27"    }  ]}
+{
+  "items": [
+    {
+      "title": "欢迎使用 TaskPro",
+      "content": "已接入 GitHub 脚本市场, 可在脚本市场页浏览/上传脚本",
+      "time": "2026-08-27"
+    }
+  ]
+}
