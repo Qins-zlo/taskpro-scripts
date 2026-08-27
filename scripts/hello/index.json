@@ -1,0 +1,8 @@
+{
+  "name": "hello",
+  "type": "py",
+  "ver": "1.0",
+  "note": "示例脚本: 打印Hello",
+  "author": "Qins-zlo",
+  "content": "print('Hello from TaskPro script market!')"
+}
