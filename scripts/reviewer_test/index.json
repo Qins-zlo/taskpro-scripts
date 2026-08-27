@@ -1,8 +1,0 @@
-{
-    "name": "reviewer_test",
-    "type": "py",
-    "ver": "1.0",
-    "note": "审核器端到端测试",
-    "author": "tester",
-    "content": ""
-}
