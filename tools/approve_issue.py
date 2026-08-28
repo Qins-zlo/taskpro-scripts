@@ -99,8 +99,12 @@ def approve(meta):
     print(f"✅ 已通过并上架: {name} v{meta['ver']} (Issue #{meta['issue']})")
 
 def reject(num, reason=""):
+    # 驳回时保留原始 body (含 UID, App 靠 UID 识别归属), 在末尾追加 rejected 标记与理由
+    cur = gh("GET", f"/issues/{num}")
+    orig_body = cur.get("body", "")
+    mark = f"\n\n**rejected**: {reason if reason else '未通过审核'}"
     gh("PATCH", f"/issues/{num}",
-       {"state": "closed", "body": f"未通过审核{(': ' + reason) if reason else ''}"})
+       {"state": "closed", "body": orig_body + mark})
     print(f"❌ 已驳回 Issue #{num}{': ' + reason if reason else ''}")
 
 if __name__ == "__main__":
