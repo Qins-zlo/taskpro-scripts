@@ -3,7 +3,8 @@
     {
       "title": "v7.66 版本发布",
       "content": "新功能: 公告接入 GitHub，脚本市场 5 分钟磁盘缓存秒开加速，脚本内容内存缓存；修复: 审核驳回理由显示、手动刷新脚本列表、市场脚本文件名后缀、脚本编辑页小内容布局。可在 App 内检查更新或前往 GitHub Release 下载最新版。",
-      "time": "2026-08-28"
+      "time": "2026-08-28",
+      "ad_url": "https://github.com/Qins-zlo/taskpro/releases/tag/v7.66"
     },
     {
       "title": "欢迎使用 TaskPro",
