@@ -13,6 +13,13 @@
       "ver": "1.0",
       "note": "整点报时脚本",
       "author": "测试"
+    },
+    {
+      "name": "qiandao",
+      "type": "py",
+      "ver": "1.0",
+      "note": "绝区零米游社每日签到 (环境变量 ZZZ_COOKIES, 多账号换行分隔)",
+      "author": "q"
     }
   ]
 }
